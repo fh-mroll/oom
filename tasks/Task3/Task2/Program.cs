@@ -13,7 +13,7 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            var DxRacer = new Furniture.Chair(true, true, "Leder", 49.97);
+            var DxRacer = new Furniture.Chair(true, true, "Leder", "DxRacer", 49.97);
 
             Console.WriteLine(DxRacer.ToString + "\n");
 
@@ -24,20 +24,26 @@ namespace Task2
             Console.WriteLine("Nur heute: " + DxRacer.Price + " Euro");
 
 
-
-            
+            DxRacer.PrintPrize();
         }
     }
 }
 
 namespace Furniture
 {
-    public class Chair
+
+    public interface A
+    {
+        void PrintPrice();
+    }
+
+    public class Chair 
     {
 
         public Boolean Mobile { get; private set; }
         public Boolean Rest { get; private set; }
         public string Cover { get; private set; }
+        public string Name { get; private set; }
         private double m_price;
 
         public double Price
@@ -58,11 +64,16 @@ namespace Furniture
 
         }
 
+        public void PrintPrize()
+        {
+            Console.WriteLine("Der neue " + this.Name + " kostet unglaubliche " + this.Price + " Euro");
+        }
 
         public new string ToString => ($"Sessel ist mobil: {this.Mobile} \nBesitzt eine Lehne: {this.Rest} \nSessel Bezug: {this.Cover}\nKosten: {this.Price}");
 
-        public Chair(Boolean newMobile, Boolean newRest, string newCover, double newPrice)
+        public Chair(Boolean newMobile, Boolean newRest, string newCover, string newName, double newPrice)
         {
+            Name = newName;
             Mobile = newMobile;
             Rest = newRest;
             Cover = newCover;
