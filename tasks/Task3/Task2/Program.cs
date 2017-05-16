@@ -13,6 +13,7 @@ namespace Task2
     {
         static void Main(string[] args)
         {
+           
             var DxRacer = new Furniture.Chair(true, true, "Leder", "DxRacer", 49.97);
 
             Console.WriteLine(DxRacer.ToString + "\n");
