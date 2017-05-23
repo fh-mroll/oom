@@ -11,19 +11,30 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-           
-            var Chair = new Furnishings.Chair(true, true, "Leder", "DxRacer", 49.97);
 
-            Console.WriteLine(DxRacer.ToString + "\n");
+            Furnishings.Chair[] Chairs = new Furnishings.Chair[3];
+
+            Chairs[1] = new Furnishings.Chair(true, true, "Leder", "DxRacer", 149.97);
+            Chairs[2] = new Furnishings.Chair(true, true, "steel", "DxRacerSpace", 1049.34);
+
+            Console.WriteLine(Chairs[1].ToString + "\n");
 
             Console.WriteLine("!! Satte Rabatte !!");
 
-            DxRacer.Price = (DxRacer.Price * 0.8);
+            Chairs[1].Price = (Chairs[1].Price * 0.8);
 
-            Console.WriteLine("Nur heute: " + DxRacer.Price + " Euro");
+            Console.WriteLine("Nur heute: " + Chairs[1].Price + " Euro");
 
+            Chairs[1].PrintPrice();
 
-            DxRacer.PrintPrice();
+            Console.WriteLine("\n\n");
+
+            Console.WriteLine(Chairs[2].ToString);
+
+            var table = new Furnishings.Table(12.5, 25.32, 50, "SimpleTable", 26.923);
+
+            table.PrintPrice();
+
         }
     }
 }
@@ -94,13 +105,7 @@ namespace Furnishings
             {
                 return Math.Round(Height, 2);
             }
-            set
-            {
-                if (value >= 1)
-                    this.Depth = value;
-                else
-                    throw new ArgumentOutOfRangeException("Deph must be greater than");
-            }
+            private set { }
         }
         public double Width
         {
@@ -108,13 +113,7 @@ namespace Furnishings
             {
                 return Math.Round(Width, 2);
             }
-            set
-            {
-                if (value >= 1)
-                    this.Depth = value;
-                else
-                    throw new ArgumentOutOfRangeException("Deph must be greater than");
-            }
+            private set { }
         }
         public double Depth
         {
@@ -122,13 +121,7 @@ namespace Furnishings
             {
                 return Math.Round(Depth, 2);
             }
-            set
-            {
-                if (value >= 1)
-                    this.Depth = value;
-                else
-                    throw new ArgumentOutOfRangeException("Deph must be greater than");
-            }
+            private set { }
         }
 
         public void PrintPrice() => Console.WriteLine("Der Stuhl " + this.Name + " kostet " + this.Price + " Euro.");
