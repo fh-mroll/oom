@@ -1,0 +1,4 @@
+{"Height":50.3,"Width":25.32,"Depth":12.50123,"ToString":"SimpleTable\nHöhe(cm): 50,3\nBreite(cm): 25,32\nTiefe(cm): 12,50123","Name":"SimpleTable","Price":26.92}
+{"Mobile":true,"Rest":true,"Cover":"Leder","ToString":"Sessel ist mobil: True \nBesitzt eine Lehne: True \nSessel Bezug: Leder\nKosten: 149,97","Name":"DxRacer","Price":149.97}
+{"Mobile":true,"Rest":true,"Cover":"steel","ToString":"Sessel ist mobil: True \nBesitzt eine Lehne: True \nSessel Bezug: steel\nKosten: 839,47","Name":"DxRacerSpace","Price":839.47}
+{"Height":50.0,"Width":36.0,"Depth":20.0,"ToString":"Table0815\nHöhe(cm): 50\nBreite(cm): 36\nTiefe(cm): 20","Name":"Table0815","Price":9.99}
